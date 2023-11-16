@@ -3,10 +3,10 @@ import React from 'react'
 const Services = () => {
   return (
     <section class="page-section" id="services">
-            <div class="container">
+            <div class="container bg-success">
                 <div class="text-center">
                 <br />
-                    <h3 class="section-subheading text-muted">Serba serbi tentang aku</h3>
+                    <h3 class="section-subheading text-muted">Everything About Me</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -29,7 +29,7 @@ const Services = () => {
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         </span>
-                        <h4 class="my-3">Keseharian</h4>
+                        <h4 class="my-3">Daily</h4>
                         <p class="text-muted"> Seperti pada umumnya keseharian ku yang pasti kuliah, mengerjakan tugas kuliah, juga 
                         karna dan sehubungan karena aku terlibat organisasi akupun mengerjakan tugas organisasi.</p>
                     </div>

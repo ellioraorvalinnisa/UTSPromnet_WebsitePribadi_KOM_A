@@ -1,26 +1,31 @@
-import { Card, Container } from "react-bootstrap"
+import Card from 'react-bootstrap/Card';
 
-const About = () => {
+function About() {
   return (
     <section class="page-section" id="about">
     <div>
-      <Container>
-        <br />
-        <h1 className="teks-white">ABOUT ME</h1>
-        <br />
-        <Card>
-          <Card.Title className="text-left">Hello,</Card.Title>
-          <Card.Text className="text-left">
-            Perkenalkan aku Ell, lahir di Bandung, 25 Juli 2002. Saat ini aku
-            merupakan mahasiswa tingkat I jurusan Pendidikan Ilmu Komputer,
-            Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam Sedang
-            mengejar gelar S1 di Universitas Pendidikan Indonesia.
-          </Card.Text>
-        </Card>
-      </Container>
+    <Card bg="dark" data-bs-theme="dark">
+      <h2>ABOUT ME</h2>
+      <Card.Header>Halo!!</Card.Header>
+      <Card.Body>
+        <blockquote className="blockquote mb-0">
+          <p>
+            {' '}
+            Perkenalkan aku Ell, lahir di Bandung, 25 Juli 2002. 
+            Saat ini aku merupakan mahasiswa tingkat I jurusan Pendidikan Ilmu Komputer, 
+            Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam Sedang mengejar 
+            gelar S1 di Universitas Pendidikan Indonesia.
+            {' '}
+          </p>
+          <footer className="blockquote-footer">
+            Bandung, <cite title="Source Title">4 November 2023</cite>
+          </footer>
+        </blockquote>
+      </Card.Body>
+    </Card>
     </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;

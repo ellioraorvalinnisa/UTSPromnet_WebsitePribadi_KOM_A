@@ -1,67 +1,17 @@
 .myBG {
-    height: 100vh;
-    background : url("../assets/image/bg/bgbiru.jpeg");
-    background-size:  cover;
+    height:7cm;
+    background :  rgb(20, 26, 19);
+    background-size:7cm
 }
 
-.intro {
-    height: 300px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+.home{
+    fill-opacity: 20%;
 }
 
-.title {
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 2;
-    text-shadow: 2px 2px black;
-    letter-spacing: 2px;
-}
-
-
-.Footer {
-    height: auto;
-    background : rgb(169, 169, 189);
-    background-size:  cover;
-}
-
-.Gallery {
-    height: auto;
-    background :  rgb(112, 112, 128);
-    background-size:  cover;
-}
-
-.NavigationBar {
-    height: auto;
-    background : rgb(74, 74, 126);
-    background-size:  cover;
-}
-
-.Portofolio {
-    height: auto;
-    background : rgb(169, 169, 189);
-    background-size:  cover;
-}
-
-.Services {
-    height: auto;
-    background : rgb(112, 112, 128);
-    background-size:  cover;
-}
-
-.divkomImage {
-    height: auto;
-    background-color: black;
-    margin: 5px;
-    padding: 5px;
-}
-
-.jicaImage {
-    height: auto;
-    background-color: black;
-    margin: 5px;
-    padding: 5px;
+.about {
+    height:7cm;
+    background :  rgb(92, 118, 87);
+    background-size:7cm
 }
 
 .images {

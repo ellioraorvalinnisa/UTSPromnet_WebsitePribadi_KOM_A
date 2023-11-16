@@ -1,59 +1,89 @@
-import React from 'react'
+import React, { useRef } from "react";
+import { Form } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nytato7",
+        "template_urpa3un",
+        form.current,
+        "oj2PpRQ4NZit9PGj5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                <br />
-                    <h2 class="section-heading text-uppercase">Contact Me</h2>
-                    <h3 class="section-subheading text-muted">If you need help or something.</h3>
-                </div>
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                               
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                             
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                               
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                 
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                   
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
-            </div>
-        </section>
-  )
-}
+      <div className="container bg-success">
+        <br/><h2 className="text-center">CONTACT US</h2>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="form-control card-flex-center dir-column"
+        >
+          <Form.Group className="mb-3" controlId="formGroupText">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your full name"
+              name="user_name"
+              required
+            />
+          </Form.Group>
 
-export default Contact
+          <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="user_email"
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGroupSubject">
+            <Form.Label>Subject</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter the subject"
+              name="subject"
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGroupMessage">
+            <Form.Label>Message</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={5}
+              placeholder="Enter your message"
+              name="message"
+              required
+            />
+          </Form.Group>
+
+          <button type="submit" className="btn btn-success">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

@@ -1,49 +1,47 @@
-import "./App.css"
-import NavigationBar from "./components/NavigationBar"
-import Intro from "./components/Intro"
-import About from "./components/About"
-import Contact from "./components/Contact"
-import Services from "./components/Services"
-import Gallery from "./components/Gallery"
-import Footer from "./components/Footer"
-import "./style/landingPage.css"
-import Portofolio from "./components/Portofolio"
+import './App.css';
+import NavigationBar from './components/NavigationBar';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Services from './components/Services';
+import Portofolio from './components/Portofolio';
+import Gallery from './components/Gallery';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
-        <div className="myBG">
-          <NavigationBar />
-          <Intro/>
+      <div className='myBG'>
+         <NavigationBar />
+         <Home />
+      </div>
+
+      <div className='about'>
+        <About/>
+      </div>
+
+      <div className="contact"> 
+        <Contact/>
+      </div>
+
+      <div className="services">
+          <Services/>
+       </div>
+
+      <div>
+        <Portofolio />
         </div>
 
-            <div className="About">
-            <About/>
-            </div>
+      <div className='gallery'>
+        <Gallery/>
+      </div>
 
-            <div className="Contact">
-            <Contact/>
-            </div>
+      <div className='footer'>
+        <Footer/>
+      </div>
 
-           <div className="Services">
-            <Services/>
-            </div>
+    </div>
+            );
+        }
 
-            <div className="Portofolio">
-            <Portofolio/>
-           </div>
-
-            <div className="Gallery">
-            <Gallery/>
-           </div>
-
-             <div className="Footer">
-             <Footer/>
-           </div>
-  
-            </div>
-  
-  )
-}
-
-export default App
+export default App;
